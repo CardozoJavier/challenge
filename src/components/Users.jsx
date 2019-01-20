@@ -25,7 +25,7 @@ export default ({ users, classes, handleChange }) => {
 						</div>
 						
 						<div className={ classes.img }>
-							<img src= { user.avatarUrl } />
+							<img src= { user.avatarUrl } alt= 'avatar' />
 						</div>
 					
 					</div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import classes from './style.css';
+import classes from './style.module.css';
 import Users from '../../components/Users';
 
 export default class UsersContainer extends Component{
@@ -17,7 +17,7 @@ export default class UsersContainer extends Component{
 
 	componentDidMount(){
 		// Una vez montado el componente, hago un pedido por todos los users;
-		axios.get('localhost:3000/people')
+		axios.get('https://crossorigin.me/https://localhost:3000/people')
 			.then(res => res.data)
 			.then(allUsers => {
 				this.sortingByName(allUsers);
@@ -56,11 +56,10 @@ export default class UsersContainer extends Component{
 			this.setState({ filteredUsers : [] });
 		}
 	}
-
 	render(){
 		return(
 			<Users 
-				handleChange = { this.handleChange } 
+				handleChange = { this.handleChange }
 				users = { (this.state.filteredUsers.length > 0 && this.state.filteredUsers) || (this.state.allUsers) }
 				classes = { classes }
 			/>
