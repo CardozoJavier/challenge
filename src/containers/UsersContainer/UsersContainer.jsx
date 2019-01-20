@@ -17,7 +17,7 @@ export default class UsersContainer extends Component{
 
 	componentDidMount(){
 		// Una vez montado el componente, hago un pedido por todos los users;
-		axios.get('https://crossorigin.me/https://localhost:3000/people')
+		axios.get('/people')
 			.then(res => res.data)
 			.then(allUsers => {
 				this.sortingByName(allUsers);
