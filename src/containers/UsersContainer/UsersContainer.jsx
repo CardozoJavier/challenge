@@ -11,8 +11,6 @@ export default class UsersContainer extends Component{
 			filteredUsers : [],
 			username : '',
 		}
-		// Bindeo el this a handleChange para que se ejecute correctamente cuando es llamado por el input del navbar.
-		this.handleChange = this.handleChange.bind(this);
 	}
 
 	componentDidMount(){
@@ -41,7 +39,7 @@ export default class UsersContainer extends Component{
 	}
 
 	// Manejo el valor del input del navbar. 
-	handleChange(e){
+	handleChange = (e) => {
 		let username = e.target.value;
 		this.setState({ username });
 		
